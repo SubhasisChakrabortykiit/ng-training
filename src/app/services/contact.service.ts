@@ -24,4 +24,30 @@ export class ContactService {
         return resp.json(); //4. send the resp back to comp
       }));
   }
+
+  getContacts(){
+    return this.http.get("https://jsonplaceholder.typicode.com/users")
+      .pipe(map((resp) => { //3. receive resp from rest api
+        console.log(resp);
+        return resp.json(); //4. send the resp back to comp
+      }));
+  }
+
+  getContactById(id){ //get id from component
+    return this.http.get("https://jsonplaceholder.typicode.com/users/" + id)
+    .pipe(map((resp) => { //3. receive resp from rest api
+      console.log(resp);
+      return resp.json(); //4. send the resp back to comp
+    }));
+  }
+
+  updateContact(updatableContactData){
+    console.log(updatableContactData);
+    return this.http.put("https://jsonplaceholder.typicode.com/users/" + updatableContactData.id, updatableContactData)
+      .pipe(map((resp) => { //3. receive resp from rest api
+        console.log(resp);
+        return resp.json(); //4. send the resp back to comp
+      }));  
+  }
+
 }

@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
 import { HttpModule } from '@angular/http';
+import {ProgressBarModule} from "angular-progress-bar";
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/shared/header/header.component';
@@ -32,7 +33,7 @@ const APP_ROUTES : Routes = [
   { path: 'contacts', component: ContactsComponent },
   { path: 'add-contact', component: AddContactComponent },
   { path: 'about', component: AboutComponent },
-  { path: 'contact-details', component: ContactDetailsComponent },
+  { path: 'contact-details/:id', component: ContactDetailsComponent },
   { path: 'new-banner', component: NewBannerComponent }
 ]
 
@@ -64,6 +65,7 @@ const APP_ROUTES : Routes = [
     BrowserModule,
     FormsModule,
     HttpModule,
+    ProgressBarModule,
     RouterModule.forRoot(APP_ROUTES) //REGISTERING ROUTES
   ],
   providers: [],

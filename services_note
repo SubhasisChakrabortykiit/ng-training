@@ -8,3 +8,12 @@ acts as an intermediate layer
     2.2. find out right http method - POST
 3. receive the data from rest api
 4. send the response back to the component.
+
+
+
+1. initiate a req from comp to service
+2. send the req to api endpoint
+    2.1 find api end point --- https://jsonplaceholder.typicode.com/users
+    2.2. find out right http method - GET
+3. receive the data from rest api
+4. send the response back to the component.

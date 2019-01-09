@@ -46,9 +46,6 @@ export class AddContactComponent implements OnInit {
     // 3. get the responce from service
   }
 
-
-
-
 }
 
 

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ContactService } from 'src/app/services/contact.service';
 
 @Component({
   selector: 'app-contacts',
@@ -7,9 +8,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactsComponent implements OnInit {
 
-  constructor() { }
+  contactsList: Object[];
+  constructor(private contactService: ContactService) { //dep injection
+    console.log("inside constructor");
+   }
 
   ngOnInit() {
+    console.log("inside ngOnInit");
+    this.contactService.getContacts()
+      .subscribe( resp => {
+        console.log("resp", resp);
+        if(resp && resp.length > 0)
+        {
+        //if else logic to check status of the req
+        this.contactsList = resp;
+        }
+      });
   }
 
 }
